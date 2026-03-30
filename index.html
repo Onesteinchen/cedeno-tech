@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Mello | Cedeno Technologies</title>
+    
+    <link rel="icon" type="image/png" href="image-removebg-preview.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- CSS STYLES --- */
+        :root {
+            --primary-accent: #3cc2d1; 
+            --accent-hover: #2fa8ba;   
+            --bg-dark: #121212;        
+            --bg-card: #1e1e1e;        
+            --text-main: #e0e0e0;      
+            --text-heading: #ffffff;   
+            --nav-text: #ffffff;
+            --border-color: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-dark);
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            padding-top: 80px;
+        }
+
+        /* Fixed Top Navigation */
+        .top-nav {
+            background-color: rgba(18, 18, 18, 0.98);
+            padding: 1rem 5%;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .header-logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-heading);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            z-index: 1002;
+        }
+
+        .header-logo-text span {
+            color: var(--primary-accent);
+        }
+
+        /* Visual Logo (stuck to right top corner) */
+        .header-logo-visual {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            height: 60px; 
+            z-index: 1001;
+            object-fit: contain;
+        }
+
+        /* Navigation Links */
+        .top-nav nav {
+            display: flex;
+            gap: 2rem;
+            margin-right: 100px;
+        }
+
+        .top-nav a.nav-item {
+            text-decoration: none;
+            color: var(--nav-text);
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        .top-nav a.nav-item:hover {
+            color: var(--primary-accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5rem 5% 5rem;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+            min-height: calc(100vh - 80px);
+        }
+
+        .hero-content {
+            flex: 1;
+            max-width: 650px;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: rgba(60, 194, 209, 0.15);
+            color: var(--primary-accent);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(60, 194, 209, 0.3);
+        }
+
+        .hero h1 {
+            font-size: 3.8rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--text-heading);
+            letter-spacing: -1px;
+        }
+
+        .hero h1 span {
+            color: var(--primary-accent);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            color: #b0b0b0;
+            font-weight: 300;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 550px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+            object-fit: cover;
+        }
+
+        /* Generic Section */
+        section {
+            padding: 6rem 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 4rem;
+            color: var(--text-heading);
+            letter-spacing: -1px;
+        }
+
+        .section-title span {
+            color: var(--primary-accent);
+        }
+
+        /* Value Proposition Section */
+        .value-section {
+            background-color: var(--bg-card);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .value-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .value-card {
+            background: var(--bg-dark);
+            padding: 3rem 2rem;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+        }
+
+        .value-badge-title {
+            background-color: var(--primary-accent);
+            color: #121212;
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .value-item {
+            margin-bottom: 2rem;
+        }
+
+        .value-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .value-item h4 {
+            color: var(--text-heading);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .value-item p {
+            color: #a0a0a0;
+            font-size: 1rem;
+        }
+
+        /* UPDATED: Features/Tech Grid with Full-Width Card Images */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .feature-box {
+            background: var(--bg-card);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s, box-shadow 0.3s;
+            overflow: hidden; /* This keeps the full-width images constrained to the rounded corners */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-accent);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4); /* Added shadow for pop */
+        }
+
+        /* New Image Integration Style */
+        .feature-box img {
+            width: 100%;
+            height: 220px; /* Fixed height for uniformity */
+            object-fit: cover; /* Zooms/crops perfectly to fill space without distortion */
+            object-position: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        /* Container for the text below the image */
+        .feature-content {
+            padding: 2.5rem;
+            flex-grow: 1; /* Ensures cards stretch to equal heights if text length varies */
+        }
+
+        .feature-content h3 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            color: var(--primary-accent);
+        }
+
+        .feature-content p {
+            color: #cccccc;
+            font-size: 1.05rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #080808;
+            color: var(--text-main);
+            text-align: center;
+            padding: 5rem 5% 3rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-logo-visual {
+            height: 60px;
+            margin-bottom: 2rem;
+        }
+
+        .footer-content h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-accent);
+            font-size: 1.8rem;
+        }
+
+        .footer-content p {
+            color: #888888;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-content a {
+            color: var(--text-heading);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .footer-content a:hover {
+            color: var(--primary-accent);
+        }
+
+        .copyright {
+            font-size: 0.85rem;
+            margin-top: 4rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 2rem;
+            color: #555555;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 992px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 3rem;
+            }
+            .hero-content {
+                margin-bottom: 3rem;
+            }
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            .hero-image {
+                justify-content: center;
+            }
+            .value-grid {
+                grid-template-columns: 1fr;
+            }
+            .top-nav nav {
+                display: none;
+            }
+            .header-logo-visual {
+                height: 45px;
+                top: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="top-nav">
+        <a href="#home" class="header-logo-text">Cedeno <span>Tech</span></a>
+        
+        <nav>
+            <a href="#home" class="nav-item">Home</a>
+            <a href="#benefits" class="nav-item">Benefits</a>
+            <a href="#technology" class="nav-item">Technology</a>
+            <a href="#contact" class="nav-item">Contact</a>
+        </nav>
+
+        <img src="image-removebg-preview.png" alt="Cedeno Technologies Logo" class="header-logo-visual" onerror="this.style.display='none'">
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <span class="badge">Patented Technology</span>
+            <h1>Meet <span>Mello</span></h1>
+            <p>At Cedeno Technologies, we are leading the industry in dexterous robots. Experience the future of physiotherapy with our revolutionary, AI-driven solutions designed for unmatched precision and patient care.</p>
+        </div>
+        <div class="hero-image">
+            <img src="mello.png" alt="Mello Dexterous Massage Robot Profile">
+        </div>
+    </section>
+
+    <section id="benefits" class="value-section">
+        <h2 class="section-title">What <span>Mello</span> Brings to the Massage Table</h2>
+        
+        <div class="value-grid">
+            <div class="value-card">
+                <div class="value-badge-title">For Users</div>
+                
+                <div class="value-item">
+                    <h4>Experience True Mastery</h4>
+                    <p>Professional-quality massages tailored to your needs and delivered consistently.</p>
+                </div>
+                
+                <div class="value-item">
+                    <h4>Convenience Without Compromise</h4>
+                    <p>Start your session instantly with no preparation required.</p>
+                </div>
+                
+                <div class="value-item">
+                    <h4>Fast, Effective Relief</h4>
+                    <p>Eases tension and fatigue with precision and speed.</p>
+                </div>
+            </div>
+
+            <div class="value-card">
+                <div class="value-badge-title" style="background-color: var(--text-heading);">For Operators</div>
+                
+                <div class="value-item">
+                    <h4>Consistent Quality</h4>
+                    <p>Standardized robotic precision across every session and location.</p>
+                </div>
+                
+                <div class="value-item">
+                    <h4>Plug-and-Play Simplicity</h4>
+                    <p>Easy installation and operation with no specialized training.</p>
+                </div>
+                
+                <div class="value-item">
+                    <h4>Certified Safety</h4>
+                    <p>Global compliance ensures safe, reliable human-robot interaction.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="technology">
+        <h2 class="section-title">AI-Powered <span>Excellence</span></h2>
+        
+        <div class="feature-grid">
+            
+            <div class="feature-box">
+                <img src="massage_action1.png" alt="Massage Action">
+                <div class="feature-content">
+                    <h3>Massage, Mastered</h3>
+                    <p>Trained through imitation learning and able to feel and control force in every direction, Mello recreates expert techniques such as kneading, pushing, and pressing with precision and a natural rhythm.</p>
+                </div>
+            </div>
+
+            <div class="feature-box">
+                <img src="coordinate_axis_massage.png" alt="Targeted Precision">
+                <div class="feature-content">
+                    <h3>Targeted Precision</h3>
+                    <p>Every movement counts. Using AI, Mello can identify areas of tension across a client's shoulders, back, and waist, applying relief exactly where they need it.</p>
+                </div>
+            </div>
+
+            <div class="feature-box">
+                <img src="voice_interaction.png" alt="On-Demand Convenience">
+                <div class="feature-content">
+                    <h3>On-Demand Convenience</h3>
+                    <p>With no setup or preparation required, a user can simply lie back and relax. No waiting, no changing clothes, and no hassle. Just effortless comfort.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <img src="image-removebg-preview.png" alt="Cedeno Technologies Footer Logo" class="footer-logo-visual" onerror="this.style.display='none'">
+            
+            <h3>Cedeno Technologies</h3>
+            <p>Leading the world in dexterous robots and patented physiotherapy solutions.</p>
+            <br>
+            <p><strong>Address:</strong> Untere Str., 74549 Wolpertshausen, Germany</p>
+            <p><strong>Email:</strong> <a href="mailto:info@cedeno-tech.de">info@cedeno-tech.de</a></p>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2026 Cedeno Technologies. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a.nav-item').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    const headerOffset = 80;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      
+                    window.scrollTo({
+                         top: offsetPosition,
+                         behavior: "smooth"
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
