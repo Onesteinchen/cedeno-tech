@@ -1,493 +1,799 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Mello | Cedeno Technologies</title>
-    
-    <link rel="icon" type="image/png" href="image-removebg-preview.png">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
-
-    <style>
-        /* --- CSS STYLES --- */
-        :root {
-            --primary-accent: #3cc2d1; 
-            --accent-hover: #2fa8ba;   
-            --bg-dark: #121212;        
-            --bg-card: #1e1e1e;        
-            --text-main: #e0e0e0;      
-            --text-heading: #ffffff;   
-            --nav-text: #ffffff;
-            --border-color: #333333;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Montserrat', 'Segoe UI', Roboto, sans-serif;
-        }
-
-        body {
-            line-height: 1.6;
-            color: var(--text-main);
-            background-color: var(--bg-dark);
-            scroll-behavior: smooth;
-            overflow-x: hidden;
-            padding-top: 80px;
-        }
-
-        /* Fixed Top Navigation */
-        .top-nav {
-            background-color: rgba(18, 18, 18, 0.98);
-            padding: 1rem 5%;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 80px;
-        }
-
-        .header-logo-text {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-heading);
-            text-decoration: none;
-            letter-spacing: 0.5px;
-            z-index: 1002;
-        }
-
-        .header-logo-text span {
-            color: var(--primary-accent);
-        }
-
-        /* Visual Logo (stuck to right top corner) */
-        .header-logo-visual {
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            height: 60px; 
-            z-index: 1001;
-            object-fit: contain;
-        }
-
-        /* Navigation Links */
-        .top-nav nav {
-            display: flex;
-            gap: 2rem;
-            margin-right: 100px;
-        }
-
-        .top-nav a.nav-item {
-            text-decoration: none;
-            color: var(--nav-text);
-            font-weight: 500;
-            font-size: 1rem;
-            transition: color 0.3s;
-        }
-
-        .top-nav a.nav-item:hover {
-            color: var(--primary-accent);
-        }
-
-        /* Hero Section */
-        .hero {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 5rem 5% 5rem;
-            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
-            min-height: calc(100vh - 80px);
-        }
-
-        .hero-content {
-            flex: 1;
-            max-width: 650px;
-        }
-
-        .badge {
-            display: inline-block;
-            background-color: rgba(60, 194, 209, 0.15);
-            color: var(--primary-accent);
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            border: 1px solid rgba(60, 194, 209, 0.3);
-        }
-
-        .hero h1 {
-            font-size: 3.8rem;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            color: var(--text-heading);
-            letter-spacing: -1px;
-        }
-
-        .hero h1 span {
-            color: var(--primary-accent);
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2.5rem;
-            color: #b0b0b0;
-            font-weight: 300;
-        }
-
-        .hero-image {
-            flex: 1;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-        }
-
-        .hero-image img {
-            width: 100%;
-            max-width: 550px;
-            height: auto;
-            border-radius: 12px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
-            object-fit: cover;
-        }
-
-        /* Generic Section */
-        section {
-            padding: 6rem 5%;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.8rem;
-            margin-bottom: 4rem;
-            color: var(--text-heading);
-            letter-spacing: -1px;
-        }
-
-        .section-title span {
-            color: var(--primary-accent);
-        }
-
-        /* Value Proposition Section */
-        .value-section {
-            background-color: var(--bg-card);
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .value-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .value-card {
-            background: var(--bg-dark);
-            padding: 3rem 2rem;
-            border-radius: 16px;
-            border: 1px solid var(--border-color);
-        }
-
-        .value-badge-title {
-            background-color: var(--primary-accent);
-            color: #121212;
-            display: inline-block;
-            padding: 0.5rem 1.5rem;
-            border-radius: 30px;
-            font-weight: 700;
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
-
-        .value-item {
-            margin-bottom: 2rem;
-        }
-
-        .value-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .value-item h4 {
-            color: var(--text-heading);
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .value-item p {
-            color: #a0a0a0;
-            font-size: 1rem;
-        }
-
-        /* UPDATED: Features/Tech Grid with Full-Width Card Images */
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .feature-box {
-            background: var(--bg-card);
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-            transition: transform 0.3s, box-shadow 0.3s;
-            overflow: hidden; /* This keeps the full-width images constrained to the rounded corners */
-            display: flex;
-            flex-direction: column;
-        }
-
-        .feature-box:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary-accent);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4); /* Added shadow for pop */
-        }
-
-        /* New Image Integration Style */
-        .feature-box img {
-            width: 100%;
-            height: 220px; /* Fixed height for uniformity */
-            object-fit: cover; /* Zooms/crops perfectly to fill space without distortion */
-            object-position: center;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        /* Container for the text below the image */
-        .feature-content {
-            padding: 2.5rem;
-            flex-grow: 1; /* Ensures cards stretch to equal heights if text length varies */
-        }
-
-        .feature-content h3 {
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-            color: var(--primary-accent);
-        }
-
-        .feature-content p {
-            color: #cccccc;
-            font-size: 1.05rem;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #080808;
-            color: var(--text-main);
-            text-align: center;
-            padding: 5rem 5% 3rem;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .footer-logo-visual {
-            height: 60px;
-            margin-bottom: 2rem;
-        }
-
-        .footer-content h3 {
-            margin-bottom: 1rem;
-            color: var(--primary-accent);
-            font-size: 1.8rem;
-        }
-
-        .footer-content p {
-            color: #888888;
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-content a {
-            color: var(--text-heading);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .footer-content a:hover {
-            color: var(--primary-accent);
-        }
-
-        .copyright {
-            font-size: 0.85rem;
-            margin-top: 4rem;
-            border-top: 1px solid var(--border-color);
-            padding-top: 2rem;
-            color: #555555;
-        }
-
-        /* Mobile Responsiveness */
-        @media (max-width: 992px) {
-            .hero {
-                flex-direction: column;
-                text-align: center;
-                padding-top: 3rem;
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cedeno R2 Robotic Massage Arm Germany | Wellness Robotics</title>
+    <meta
+      name="description"
+      content="Cedeno Technologies represents the R2 robotic massage arm in Germany with local consulting, deployment support, training, and after-sales service for wellness operators."
+    />
+    <meta
+      name="keywords"
+      content="Cedeno, Cedeno Technologies, Cedeno R2, R2 robotic massage Germany, EFBR2, German robotic massage distributor, robotic massage after-sales Germany, robotic massage arm, robot-assisted massage, massage robot, AI massage robot, commercial massage robot, robotic massage system, wellness robot, wellness robotics, robotic body care, automated massage machine, intelligent massage equipment, massage robot for wellness center, massage robot for spa, massage robot for beauty salon, massage robot for relaxation massage, Entspannungsmassage Roboter, massage robot for hotel spa, massage robot for resort, massage robot for senior living community, massage robot for community service center, massage robot for recovery studio, massage robot for fitness center, sports recovery massage robot, home robotic massage, office worker shoulder relaxation, back relaxation robot, leg recovery robot, acupoint massage robot, shockwave massage robot, radio frequency massage robot, RF wellness robot, robotic cupping therapy, moxibustion robot, facial care robot, massage robot distributor, robotic massage ROI, robotic massage price, robotic massage installation, robotic massage safety, robotic massage contraindications, robotic massage vs massage chair, robotic massage vs human massage, roboSculptor alternative, RoboRelax alternative, Gharieni Cobotics alternative"
+    />
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href="https://www.cedeno-technologies.com/" />
+    <meta property="og:title" content="Cedeno R2 Robotic Massage Arm Germany" />
+    <meta
+      property="og:description"
+      content="Cedeno Technologies is the German partner for R2 robotic massage deployment, training, and after-sales support."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/cedeno-logo-full.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Cedeno R2 Robotic Massage Arm",
+        "brand": {
+          "@type": "Brand",
+          "name": "Cedeno Technologies"
+        },
+        "category": "Robotic massage arm",
+        "description": "Commercial robotic massage system for standardized wellness, body care, and recovery service workflows.",
+        "model": "EFBR2",
+        "seller": {
+          "@type": "Organization",
+          "name": "Cedeno Technologies",
+          "areaServed": "Germany",
+          "description": "Exclusive German distributor and service partner for R2 robotic massage solutions.",
+          "sameAs": [
+            "https://www.linkedin.com/company/cedeno-technologies/",
+            "https://www.instagram.com/cedeno_technologies/",
+            "https://www.youtube.com/@CedenoTech"
+          ]
+        },
+        "additionalProperty": [
+          {"@type": "PropertyValue", "name": "Dimensions", "value": "600 x 600 x 1600 mm"},
+          {"@type": "PropertyValue", "name": "Weight", "value": "140 kg"},
+          {"@type": "PropertyValue", "name": "Rated Voltage", "value": "220 V"},
+          {"@type": "PropertyValue", "name": "Rated Power", "value": "240 W"},
+          {"@type": "PropertyValue", "name": "Force Sensor", "value": "Single-axis, 200 N range, 0.06 N accuracy"},
+          {"@type": "PropertyValue", "name": "R2 Functions", "value": "Acupoint massage, shockwave, radio frequency, cupping therapy, moxibustion, facial care"},
+          {"@type": "PropertyValue", "name": "Operating System", "value": "Ubuntu 20.04"},
+          {"@type": "PropertyValue", "name": "Control Platform", "value": "Intel i7 1260P, 32G memory, 250G storage"},
+          {"@type": "PropertyValue", "name": "Commercial Scenarios", "value": "Wellness center, beauty salon, community service center, relaxation massage room, senior living community, hotel, fitness center, sports wellness center, recovery studio"},
+          {"@type": "PropertyValue", "name": "Buyer Actions", "value": "Request quote, book demo, download brochure, ask for safety notes, confirm installation requirements, discuss distributor terms"}
+        ],
+        "audience": [
+          {"@type": "Audience", "audienceType": "Wellness centers"},
+          {"@type": "Audience", "audienceType": "Recovery studios"},
+          {"@type": "Audience", "audienceType": "Hotels and resorts"},
+          {"@type": "Audience", "audienceType": "Eldercare facilities"},
+          {"@type": "Audience", "audienceType": "Beauty salons"},
+          {"@type": "Audience", "audienceType": "Home wellness users"},
+          {"@type": "Audience", "audienceType": "Distributors"}
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the Cedeno R2 robotic massage arm?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Cedeno R2 is a commercial robotic massage system represented by Cedeno Technologies in Germany for standardized wellness service delivery with multiple interchangeable end effectors and robot-assisted operation."
             }
-            .hero-content {
-                margin-bottom: 3rem;
+          },
+          {
+            "@type": "Question",
+            "name": "What functions does Cedeno R2 include?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Cedeno R2 is positioned as a six-function commercial solution with acupoint massage, shockwave, radio frequency, cupping therapy, moxibustion, and facial care."
             }
-            .hero h1 {
-                font-size: 2.8rem;
+          },
+          {
+            "@type": "Question",
+            "name": "Is this a medical treatment device?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "This site positions the product as a wellness and body-care system. Any medical claims, treatment use, contraindications, and certifications should be confirmed against official regulatory documentation."
             }
-            .hero-image {
-                justify-content: center;
+          },
+          {
+            "@type": "Question",
+            "name": "Who uses a robotic massage arm in commercial spaces?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Typical buyers include wellness centers, spas, beauty salons, hotels and resorts, recovery studios, fitness centers, senior living communities, community service centers, and distributors that need repeatable body-care workflows."
             }
-            .value-grid {
-                grid-template-columns: 1fr;
+          },
+          {
+            "@type": "Question",
+            "name": "What should a buyer ask before purchasing R2?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Buyers should ask for product specifications, end effector details, room size and installation requirements, safety documentation, contraindication guidance, training process, warranty, maintenance plan, quote terms, and distributor support."
             }
-            .top-nav nav {
-                display: none;
+          },
+          {
+            "@type": "Question",
+            "name": "How is a robotic massage arm different from a massage chair?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A massage chair is usually a fixed consumer device. A robotic massage arm can be positioned in commercial rooms, paired with trained staff supervision, and configured with modular end effectors for different wellness service menus."
             }
-            .header-logo-visual {
-                height: 45px;
-                top: 15px;
+          },
+          {
+            "@type": "Question",
+            "name": "Which body-care needs can R2 support?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The product can be presented for wellness relaxation and recovery-support scenarios such as shoulder relaxation, back relaxation, waist and leg recovery, post-training body care, office-worker fatigue relief routines, and senior-friendly supervised wellness sessions."
             }
-        }
-    </style>
-</head>
-<body>
-
-    <header class="top-nav">
-        <a href="#home" class="header-logo-text">Cedeno <span>Tech</span></a>
-        
-        <nav>
-            <a href="#home" class="nav-item">Home</a>
-            <a href="#benefits" class="nav-item">Benefits</a>
-            <a href="#technology" class="nav-item">Technology</a>
-            <a href="#contact" class="nav-item">Contact</a>
-        </nav>
-
-        <img src="image-removebg-preview.png" alt="Cedeno Technologies Logo" class="header-logo-visual" onerror="this.style.display='none'">
+          }
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Cedeno R2 robotic massage use cases and comparisons",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Robotic massage arm for wellness centers"},
+          {"@type": "ListItem", "position": 2, "name": "Robotic massage arm for beauty salons"},
+          {"@type": "ListItem", "position": 3, "name": "Massage robot for senior living communities"},
+          {"@type": "ListItem", "position": 4, "name": "Robotic massage system for hotels and resorts"},
+          {"@type": "ListItem", "position": 5, "name": "Home robotic massage for office workers, active adults, and family wellness"},
+          {"@type": "ListItem", "position": 6, "name": "Commercial massage robot distributor program"},
+          {"@type": "ListItem", "position": 7, "name": "Cedeno R2 vs roboSculptor"},
+          {"@type": "ListItem", "position": 8, "name": "Cedeno R2 vs RoboRelax"},
+          {"@type": "ListItem", "position": 9, "name": "Cedeno R2 vs Gharieni Cobotics"},
+          {"@type": "ListItem", "position": 10, "name": "Robotic massage arm vs massage chair"},
+          {"@type": "ListItem", "position": 11, "name": "Robotic massage vs human massage"},
+          {"@type": "ListItem", "position": 12, "name": "Robotic massage safety and contraindications"},
+          {"@type": "ListItem", "position": 13, "name": "Robotic massage ROI and room operations"},
+          {"@type": "ListItem", "position": 14, "name": "Robotic massage distributor program"}
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Cedeno Technologies R2 Robotic Massage Arm Germany",
+        "url": "https://www.cedeno-technologies.com/",
+        "inLanguage": "en",
+        "about": [
+          "robotic massage arm",
+          "commercial massage robot",
+          "robot-assisted wellness",
+          "robotic cupping therapy",
+          "radio frequency wellness robot",
+          "shockwave massage robot",
+          "massage robot distributor program",
+          "German robotic massage distributor",
+          "robotic massage after-sales Germany"
+        ],
+        "audience": "Wellness operators, spa owners, hotel wellness teams, senior living operators, recovery studios, distributors, and home wellness users"
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "DefinedTermSet",
+        "name": "Cedeno R2 robotic massage keyword map",
+        "hasDefinedTerm": [
+          {"@type": "DefinedTerm", "name": "robotic massage arm", "description": "A programmable robot-assisted body-care system using sensors, end effectors, and software workflows."},
+          {"@type": "DefinedTerm", "name": "Cedeno R2 Germany", "description": "Cedeno Technologies represents R2 robotic massage solutions in Germany with local consulting, training, deployment support, and after-sales service."},
+          {"@type": "DefinedTerm", "name": "R2 six-function robotic massage system", "description": "R2 combines acupoint massage, shockwave, radio frequency, cupping therapy, moxibustion, and facial care."},
+          {"@type": "DefinedTerm", "name": "commercial massage robot ROI", "description": "A buyer calculation using room count, daily sessions, average order value, staff supervision ratio, maintenance cost, and payback period."},
+          {"@type": "DefinedTerm", "name": "robotic massage contraindications", "description": "Safety boundaries, unsuitable user conditions, staff supervision requirements, emergency stop instructions, and regulatory claim limits."}
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div class="cursor-glow" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="Cedeno home">
+        <span class="brand-mark"><img src="assets/cedeno-logo-mark.png" alt="" /></span>
+        <span>
+          <strong>Cedeno Technologies</strong>
+        </span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation">Menu</button>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#products">Products</a>
+        <a href="#technology">Technology</a>
+        <a href="#solutions">Solutions</a>
+        <a href="#compare">Compare</a>
+        <a href="#resources">Resources</a>
+        <a href="#quote" class="nav-cta">Get Quote</a>
+      </nav>
+      <div class="language-switch" aria-label="Language switcher">
+        <button type="button" class="lang-button active" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" class="lang-button" data-lang="de" aria-pressed="false">DE</button>
+      </div>
     </header>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <span class="badge">Patented Technology</span>
-            <h1>Meet <span>Mello</span></h1>
-            <p>At Cedeno Technologies, we are leading the industry in dexterous robots. Experience the future of physiotherapy with our revolutionary, AI-driven solutions designed for unmatched precision and patient care.</p>
+    <main id="home">
+      <section class="hero">
+        <div class="hero-media">
+          <div class="hero-device-frame">
+            <img src="assets/hero-aurora-eye.jpg" alt="Cedeno R2 Aurora Eye robotic massage key visual" />
+            <div class="hero-scan-line" aria-hidden="true"></div>
+            <div class="hero-chip chip-force">200 N force range</div>
+            <div class="hero-chip chip-modules">6 integrated functions</div>
+            <div class="hero-chip chip-room">Commercial room ready</div>
+          </div>
+          <div class="hero-orbit orbit-one"></div>
+          <div class="hero-orbit orbit-two"></div>
         </div>
-        <div class="hero-image">
-            <img src="mello.png" alt="Mello Dexterous Massage Robot Profile">
+        <div class="hero-copy">
+          <p class="eyebrow">Cedeno Technologies · Germany</p>
+          <h1>R2 Robotic Massage Arm for German Wellness Operators</h1>
+          <p class="hero-lede">
+            Cedeno Technologies is the exclusive German distributor for R2 robotic
+            massage solutions, with local consulting, deployment support, training,
+            and after-sales service for wellness centers, hotels, salons, recovery
+            studios, senior living operators, and channel partners.
+          </p>
+          <div class="hero-actions">
+            <a href="#quote" class="button primary">Book a demo</a>
+            <a href="#quote" class="button secondary">Request R2 product sheet</a>
+          </div>
+          <div class="metric-row" aria-label="Product highlights">
+            <div><strong data-count="6">0</strong><span>R2 functions</span></div>
+            <div><strong data-count="4">0</strong><span>rooms per supervisor</span></div>
+            <div><strong data-count="200">0</strong><span>N force range</span></div>
+            <div><strong data-count="30">0</strong><span>% space saving</span></div>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <section id="benefits" class="value-section">
-        <h2 class="section-title">What <span>Mello</span> Brings to the Massage Table</h2>
-        
-        <div class="value-grid">
-            <div class="value-card">
-                <div class="value-badge-title">For Users</div>
-                
-                <div class="value-item">
-                    <h4>Experience True Mastery</h4>
-                    <p>Professional-quality massages tailored to your needs and delivered consistently.</p>
-                </div>
-                
-                <div class="value-item">
-                    <h4>Convenience Without Compromise</h4>
-                    <p>Start your session instantly with no preparation required.</p>
-                </div>
-                
-                <div class="value-item">
-                    <h4>Fast, Effective Relief</h4>
-                    <p>Eases tension and fatigue with precision and speed.</p>
-                </div>
+      <section class="answer-band reveal">
+        <div>
+          <p class="eyebrow">Product answer</p>
+          <h2>What is the Cedeno R2 solution?</h2>
+        </div>
+        <p>
+          R2 is a robotic massage arm for standardized wellness and body-care
+          services. Cedeno brings it to German operators with local planning,
+          installation coordination, staff training, after-sales service, and clear
+          safety boundaries.
+        </p>
+      </section>
+
+      <section id="products" class="section product-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Products</p>
+          <h2>One R2 platform for commercial wellness rooms.</h2>
+          <p>
+            Review the functions, room workflow, safety boundaries, and commercial
+            fit before choosing a deployment plan.
+          </p>
+        </div>
+        <div class="product-grid reveal">
+          <article class="product-card product-panel active" id="panel-r2">
+            <img src="assets/r2-treatment-detail.jpg" alt="Cedeno R2 robotic massage treatment detail" />
+            <div>
+              <p class="eyebrow">EFBR2</p>
+              <h3>R2: One unit, six functions</h3>
+              <p>
+                Designed for commercial treatment rooms and human-robot collaboration.
+                R2 combines acupoint massage, shockwave, radio frequency, cupping,
+                moxibustion, and facial care into one robot-assisted platform.
+              </p>
+              <ul class="check-list">
+                <li>600 x 600 x 1600 mm, 140 kg robot body</li>
+                <li>220 V rated voltage, 240 W rated power</li>
+                <li>WiFi, Bluetooth 5.0, Intel i7 1260P control platform</li>
+                <li>Single-axis force sensor, 200 N range, 0.06 N accuracy</li>
+              </ul>
             </div>
-
-            <div class="value-card">
-                <div class="value-badge-title" style="background-color: var(--text-heading);">For Operators</div>
-                
-                <div class="value-item">
-                    <h4>Consistent Quality</h4>
-                    <p>Standardized robotic precision across every session and location.</p>
-                </div>
-                
-                <div class="value-item">
-                    <h4>Plug-and-Play Simplicity</h4>
-                    <p>Easy installation and operation with no specialized training.</p>
-                </div>
-                
-                <div class="value-item">
-                    <h4>Certified Safety</h4>
-                    <p>Global compliance ensures safe, reliable human-robot interaction.</p>
-                </div>
-            </div>
+          </article>
+          <aside class="spec-card">
+            <h3>Core robot body specifications</h3>
+            <dl>
+              <div><dt>Dimensions</dt><dd>600 x 600 x 1600 mm</dd></div>
+              <div><dt>Weight</dt><dd>140 kg</dd></div>
+              <div><dt>Material</dt><dd>Metal, ABS</dd></div>
+              <div><dt>Color</dt><dd>White / Gray</dd></div>
+              <div><dt>Voltage / Power</dt><dd>220 V / 240 W</dd></div>
+              <div><dt>System</dt><dd>Ubuntu 20.04</dd></div>
+            </dl>
+          </aside>
         </div>
-    </section>
+      </section>
 
-    <section id="technology">
-        <h2 class="section-title">AI-Powered <span>Excellence</span></h2>
-        
-        <div class="feature-grid">
-            
-            <div class="feature-box">
-                <img src="massage_action1.png" alt="Massage Action">
-                <div class="feature-content">
-                    <h3>Massage, Mastered</h3>
-                    <p>Trained through imitation learning and able to feel and control force in every direction, Mello recreates expert techniques such as kneading, pushing, and pressing with precision and a natural rhythm.</p>
-                </div>
-            </div>
-
-            <div class="feature-box">
-                <img src="coordinate_axis_massage.png" alt="Targeted Precision">
-                <div class="feature-content">
-                    <h3>Targeted Precision</h3>
-                    <p>Every movement counts. Using AI, Mello can identify areas of tension across a client's shoulders, back, and waist, applying relief exactly where they need it.</p>
-                </div>
-            </div>
-
-            <div class="feature-box">
-                <img src="voice_interaction.png" alt="On-Demand Convenience">
-                <div class="feature-content">
-                    <h3>On-Demand Convenience</h3>
-                    <p>With no setup or preparation required, a user can simply lie back and relax. No waiting, no changing clothes, and no hassle. Just effortless comfort.</p>
-                </div>
-            </div>
-
+      <section id="technology" class="section tech-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Core technology</p>
+          <h2>Built for repeatable technique, controlled force, and safer operations.</h2>
         </div>
-    </section>
+        <div class="tech-grid">
+          <article class="tech-card reveal">
+            <img src="assets/r2-precision-effector.jpg" alt="Cedeno R2 precision effector for robotic massage" />
+            <h3>Advanced body point recognition</h3>
+            <p>
+              Body points can be combined with technique replication to support
+              more consistent robot-assisted service delivery.
+            </p>
+          </article>
+          <article class="tech-card reveal">
+            <img src="assets/r2-body-front.jpg" alt="Cedeno R2 robot body front view" />
+            <h3>Precision force control</h3>
+            <p>
+              The R2 robot body includes a single-axis force sensor with 200 N range
+              and 0.06 N accuracy for controlled motion feedback.
+            </p>
+          </article>
+          <article class="tech-card reveal">
+            <img class="object-contain" src="assets/r2-voice-control.jpg" alt="Cedeno R2 voice control interface for robotic massage operation" />
+            <h3>Tablet workflow</h3>
+            <p>
+              A guided interface helps staff manage settings, body areas, and service
+              flow without turning the product into a black box.
+            </p>
+          </article>
+          <article class="tech-card reveal">
+            <img class="object-contain" src="assets/r2-pandora.jpg" alt="Cedeno R2 Pandora end effector for multi-layer robotic massage safety and care" />
+            <h3>Multiple safety layers</h3>
+            <p>
+              Motion planning, collision detection, visual safeguards, soft limits,
+              body boundary protection, and trajectory monitoring support safer use.
+            </p>
+          </article>
+        </div>
+      </section>
 
-    <footer id="contact">
-        <div class="footer-content">
-            <img src="image-removebg-preview.png" alt="Cedeno Technologies Footer Logo" class="footer-logo-visual" onerror="this.style.display='none'">
-            
-            <h3>Cedeno Technologies</h3>
-            <p>Leading the world in dexterous robots and patented physiotherapy solutions.</p>
-            <br>
-            <p><strong>Address:</strong> Untere Str., 74549 Wolpertshausen, Germany</p>
-            <p><strong>Email:</strong> <a href="mailto:info@cedeno-tech.de">info@cedeno-tech.de</a></p>
+      <section class="section business-section">
+        <div class="business-copy reveal">
+          <p class="eyebrow">Business value</p>
+          <h2>Greater efficiency, lower operating pressure.</h2>
+          <p>
+            The brochure positions R2 as a commercial solution where one therapist
+            can oversee up to four robots at once, helping reduce reliance on highly
+            specialized labor while maintaining standardized service quality.
+          </p>
+          <div class="roi-widget">
+            <label for="rooms">Robot rooms</label>
+            <input id="rooms" type="range" min="1" max="8" value="4" />
+            <div class="roi-output">
+              <span><strong id="rooms-value">4</strong> robot rooms</span>
+              <span><strong id="staff-value">1</strong> staff supervisor</span>
+              <span><strong id="sessions-value">32</strong> possible daily sessions</span>
+            </div>
+          </div>
         </div>
-        
-        <div class="copyright">
-            <p>&copy; 2026 Cedeno Technologies. All rights reserved.</p>
+        <div class="business-media reveal">
+          <img src="assets/r2-business-efficiency.jpg" alt="Cedeno R2 robot-assisted wellness center operation" />
         </div>
+      </section>
+
+      <section id="solutions" class="section solutions-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Solutions</p>
+          <h2>Put robotic massage where people already look for relief.</h2>
+          <p>
+            Cedeno helps operators choose the right R2 room concept, service menu,
+            safety explanation, and local support path before launch.
+          </p>
+        </div>
+        <div class="solution-grid reveal">
+          <a href="#quote" class="solution-card">
+            <span>01</span>
+            <h3>Wellness centers</h3>
+            <p>For spa owners and wellness operators who need consistent back, shoulder, leg, and full-body relaxation sessions without depending on one senior therapist.</p>
+            <ul><li>Standardized body-care protocols</li><li>One staff member can supervise multiple rooms</li><li>Works as a premium add-on service</li></ul>
+          </a>
+          <a href="#quote" class="solution-card">
+            <span>02</span>
+            <h3>Recovery studios</h3>
+            <p>For gyms, sports wellness centers, trainers, and active adults who want recovery support after workouts, travel, or long workdays.</p>
+            <ul><li>Post-training relaxation programs</li><li>Leg, waist, back, and shoulder scenarios</li><li>Pairs with stretching and recovery services</li></ul>
+          </a>
+          <a href="#quote" class="solution-card">
+            <span>03</span>
+            <h3>Hotels and resorts</h3>
+            <p>For hotels, resorts, and clubs that want a distinctive in-room or spa-area body-care experience customers can book as a paid upgrade.</p>
+            <ul><li>Quiet guest-service workflow</li><li>Memorable technology-led amenity</li><li>Premium wellness package potential</li></ul>
+          </a>
+          <a href="#quote" class="solution-card">
+            <span>04</span>
+            <h3>Relaxation massage rooms</h3>
+            <p>For salons, spas, hotels, and private wellness rooms that want a calm, comfortable, repeatable relaxation massage experience with clear staff guidance.</p>
+            <ul><li>Comfort-led service flow</li><li>Clear safety boundaries</li><li>Repeatable relaxation menu</li></ul>
+          </a>
+          <a href="#quote" class="solution-card">
+            <span>05</span>
+            <h3>Home wellness users</h3>
+            <p>For office workers with shoulder and back fatigue, middle-aged and older family members seeking daily relaxation, fitness users needing recovery, and technology-minded households with enough installation space.</p>
+            <ul><li>Private home body-care room</li><li>Repeatable relaxation routines</li><li>Clear installation and safety requirements</li></ul>
+          </a>
+          <a href="#quote" class="solution-card">
+            <span>06</span>
+            <h3>Distributors</h3>
+            <p>For channel partners selling to spas, salons, hotels, recovery centers, and senior care operators who need a differentiated robotic wellness product.</p>
+            <ul><li>Award-winning product story</li><li>Training and onboarding support</li><li>Territory and cooperation discussion</li></ul>
+          </a>
+        </div>
+        <div class="scenario-panel reveal">
+          <div class="scenario-intro">
+            <p class="eyebrow">Deployment environments</p>
+            <h3>Adaptable to diverse service rooms</h3>
+            <p>
+              R2 can be positioned in wellness centers, traditional
+              wellness centers, beauty salons, community service centers, relaxation
+              massage rooms, hotels, fitness centers, and sports wellness centers.
+              Each setting needs a different room layout, customer promise, staff
+              workflow, and safety explanation.
+            </p>
+          </div>
+          <div class="scenario-list" aria-label="Cedeno R2 deployment scenarios">
+            <article class="scenario-card">
+              <img src="assets/scenes/wellness-center.jpg" alt="R2 robotic massage arm in a wellness center room" />
+              <div><strong>Wellness Center</strong><span>Robotic massage room for standardized commercial body-care services.</span></div>
+            </article>
+            <article class="scenario-card">
+              <img src="assets/scenes/traditional-wellness-center.jpg" alt="R2 robotic massage arm in a traditional wellness center" />
+              <div><strong>Traditional Wellness Center</strong><span>Upgrade existing massage rooms with robot-assisted service capacity.</span></div>
+            </article>
+            <article class="scenario-card">
+              <img src="assets/scenes/beauty-salon.jpg" alt="R2 robotic massage arm in a beauty salon room" />
+              <div><strong>Beauty Salon</strong><span>Add body relaxation and contouring-support experiences beside beauty treatments.</span></div>
+            </article>
+            <article class="scenario-card">
+              <img src="assets/scenes/community-service-center.jpg" alt="R2 robotic massage arm in a community service center" />
+              <div><strong>Community Service Center</strong><span>Offer supervised wellness access for neighborhood health and relaxation programs.</span></div>
+            </article>
+            <article class="scenario-card">
+              <img src="assets/scenes/relaxation-massage.jpg" alt="R2 robotic massage arm for relaxation massage in a salon room" />
+              <div><strong>Relaxation Massage</strong><span>Offer calm, repeatable body relaxation sessions for guests who want a comfortable guided wellness experience.</span></div>
+            </article>
+            <article class="scenario-card">
+              <img src="assets/scenes/hotel.jpg" alt="R2 robotic massage arm in a hotel wellness room" />
+              <div><strong>Hotel</strong><span>Create bookable guest wellness services inside rooms, spa areas, or private suites.</span></div>
+            </article>
+            <article class="scenario-card">
+              <img src="assets/scenes/fitness-center.jpg" alt="R2 robotic massage arm in a fitness center recovery room" />
+              <div><strong>Fitness Center</strong><span>Support members after training with repeatable recovery and relaxation sessions.</span></div>
+            </article>
+            <article class="scenario-card">
+              <img src="assets/scenes/sports-wellness-center.jpg" alt="R2 robotic massage arms in a sports wellness center room" />
+              <div><strong>Sports Wellness Center</strong><span>Serve athletes and active users with structured post-exercise body-care workflows.</span></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="compare" class="section compare-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Compare options</p>
+          <h2>How Cedeno R2 compares with robotic massage alternatives.</h2>
+          <p>
+            Buyers comparing massage robots usually care about ownership model,
+            use scenario, service capacity, safety, and whether the product can be
+            deployed beyond a single demo room.
+          </p>
+        </div>
+        <div class="compare-table reveal" role="table" aria-label="Robotic massage comparison">
+          <div class="table-row table-head" role="row">
+            <div role="columnheader">Buyer question</div>
+            <div role="columnheader">What to know</div>
+            <div role="columnheader">Cedeno answer</div>
+          </div>
+          <div class="table-row" role="row">
+            <div>Cedeno R2 vs roboSculptor</div>
+            <div>roboSculptor presents AI-powered robotic body therapy for wellness businesses, with ROI and media proof.</div>
+            <div>Cedeno gives German buyers visible R2 specifications, six-function service logic, safety layers, commercial scenarios, training, and local after-sales support.</div>
+          </div>
+          <div class="table-row" role="row">
+            <div>Cedeno R2 vs RoboRelax</div>
+            <div>RoboRelax is a local robot massage salon model with booking, pricing, and a Munich-focused store experience.</div>
+            <div>Cedeno is positioned for operators who want to own, deploy, or distribute R2 robotic massage systems across multiple commercial scenarios in Germany.</div>
+          </div>
+          <div class="table-row" role="row">
+            <div>Cedeno R2 vs Gharieni/Cobotics</div>
+            <div>Gharieni builds authority through a mature spa equipment ecosystem, catalogs, news, and client portfolio.</div>
+            <div>Cedeno can be clearer for robotic massage buyers by connecting R2 specs, end effectors, room layouts, safety boundaries, local service, and quote actions on the same path.</div>
+          </div>
+          <div class="table-row" role="row">
+            <div>Robotic massage arm vs massage chair</div>
+            <div>A massage chair is a fixed consumer device. It usually has limited room workflow value and cannot easily support staff-led commercial protocols.</div>
+            <div>Cedeno R2 is a robot-assisted platform with six integrated functions, commercial deployment scenarios, staff oversight, and service-room positioning.</div>
+          </div>
+          <div class="table-row" role="row">
+            <div>Robotic massage vs human massage</div>
+            <div>Human massage offers judgment and care, but quality may vary by therapist fatigue, staffing, training, and scheduling.</div>
+            <div>Cedeno does not replace professional judgment; it helps operators standardize selected body-care routines with repeatable robot-assisted motion and safety workflows.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section trust-section">
+        <div class="trust-card reveal">
+          <img src="assets/awards.webp" alt="R2 product design awards and recognition" />
+          <div>
+            <p class="eyebrow">Trust signals</p>
+            <h2>Product proof, local responsibility</h2>
+            <p>
+              Cedeno uses product proof, technical documentation, and local service
+              planning to help German buyers evaluate R2 before discussing room
+              setup, staff training, maintenance, and quote terms.
+            </p>
+          </div>
+        </div>
+        <div class="trust-card reverse service-trust-card reveal">
+          <div>
+            <p class="eyebrow">Germany representation</p>
+            <h2>Cedeno is Eachifuture's exclusive German agent.</h2>
+            <p>
+              Cedeno represents Eachifuture R2 in Germany with a dedicated local
+              after-sales service team, so operators can plan purchase, deployment,
+              training, maintenance, and long-term support through one accountable
+              German partner.
+            </p>
+          </div>
+          <div class="service-proof-grid" aria-label="Cedeno German service commitments">
+            <article><span>01</span><strong>Exclusive German agent</strong><p>Official Cedeno contact for R2 sales, demo planning, and partner discussions in Germany.</p></article>
+            <article><span>02</span><strong>After-sales service team</strong><p>Local service coordination for training, troubleshooting, maintenance, and operator support.</p></article>
+            <article><span>03</span><strong>Deployment support</strong><p>Room planning, workflow setup, safety explanation, and launch preparation for commercial operators.</p></article>
+            <article><span>04</span><strong>Long-term partner path</strong><p>Support for wellness centers, hotels, salons, recovery studios, and distribution partners.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section id="resources" class="section resources-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Knowledge center</p>
+          <h2>Useful answers for buyers, operators, and partners.</h2>
+          <p>
+            Each article preview below is written as real buyer education. The goal is
+            to help people decide what model, room setup, and operating path fits them.
+          </p>
+        </div>
+        <div class="resource-grid reveal">
+          <article><h3>What is a robotic massage arm?</h3><p>A robotic massage arm is a programmable body-care system that uses a robot body, end effectors, sensors, and software workflows to deliver repeatable relaxation or wellness sessions under defined safety boundaries.</p><a href="#quote">Ask for the buyer checklist</a></article>
+          <article><h3>R2 functions</h3><p>R2 is a six-function commercial solution for acupoint massage, shockwave, radio frequency, cupping therapy, moxibustion, and facial care. Buyers should evaluate it by service menu, room type, staff workflow, and budget.</p><a href="#products">View R2 product details</a></article>
+          <article><h3>Robotic massage vs massage chair</h3><p>A massage chair is usually a fixed consumer device. A robotic massage arm can support commercial rooms, staff supervision, modular end effectors, and service positioning for wellness centers, hotels, salons, and recovery studios.</p><a href="#compare">View comparison</a></article>
+          <article><h3>Safety and contraindications</h3><p>Operators should publish suitable users, unsuitable users, emergency stop instructions, movement limits, cleaning routines, and medical-claim boundaries before offering robot-assisted massage sessions.</p><a href="#quote">Request safety notes</a></article>
+          <article><h3>Distributor guide</h3><p>Distributors need product differentiation, installation requirements, after-sales policy, training materials, territory terms, and proof assets such as awards, media coverage, product specifications, and deployment scenarios.</p><a href="#quote">Discuss distribution</a></article>
+          <article><h3>Room ROI and operations</h3><p>A commercial buyer should calculate room count, daily sessions, average order value, staff supervision ratio, maintenance cost, payback period, and whether R2 can support a paid upgrade or membership service.</p><a href="#quote">Estimate a deployment</a></article>
+        </div>
+      </section>
+
+      <script type="application/json" id="search-intent-map">
+        {
+          "brandAndModelQueries": [
+            "Cedeno R2 robotic massage arm Germany",
+            "Cedeno Technologies R2",
+            "German distributor for R2 robotic massage",
+            "EFBR2 commercial massage robot",
+            "R2 six-function massage robot",
+            "Eachifuture R2 robotic massage arm product alias"
+          ],
+          "categoryQueries": [
+            "robotic massage arm",
+            "robot-assisted massage",
+            "AI massage robot",
+            "commercial massage robot",
+            "automated massage machine",
+            "robotic body care system",
+            "wellness robotics equipment"
+          ],
+          "functionQueries": [
+            "acupoint massage robot",
+            "shockwave massage robot",
+            "radio frequency massage robot",
+            "RF warming care robot",
+            "robotic cupping therapy",
+            "negative pressure cupping robot",
+            "moxibustion massage robot",
+            "facial care robot",
+            "Mini Radar end effector",
+            "MultiCup end effector"
+          ],
+          "scenarioQueries": [
+            "robotic massage arm for wellness center",
+            "massage robot for spa",
+            "massage robot for beauty salon",
+            "massage robot for relaxation massage",
+            "Entspannungsmassage Roboter",
+            "commercial robotic massage system for hotel spa",
+            "massage robot for senior living community",
+            "robotic massage system for fitness recovery center",
+            "sports recovery massage robot",
+            "massage robot for community service center",
+            "home robotic massage for office workers and older adults"
+          ],
+          "bodyNeedQueries": [
+            "shoulder relaxation robot",
+            "back relaxation robot",
+            "waist relaxation robot",
+            "leg recovery robot",
+            "office worker back fatigue massage robot",
+            "post workout recovery massage robot",
+            "senior wellness relaxation robot"
+          ],
+          "buyerActionQueries": [
+            "robotic massage robot price",
+            "commercial massage robot cost",
+            "robotic massage ROI calculator",
+            "robotic massage installation requirements",
+            "robotic massage safety documentation",
+            "robotic massage contraindications",
+            "massage robot distributor program",
+            "book robotic massage robot demo",
+            "download robotic massage product brochure"
+          ],
+          "comparisonQueries": [
+            "Cedeno R2 vs roboSculptor alternative",
+            "Cedeno R2 vs RoboRelax alternative",
+            "Cedeno R2 vs Gharieni Cobotics alternative",
+            "robotic massage arm vs massage chair",
+            "robotic massage vs human massage",
+            "massage robot vs massage chair",
+            "AI massage robot comparison"
+          ],
+          "answerEngineQuestions": [
+            "What is a robotic massage arm?",
+            "What functions does Cedeno R2 include?",
+            "Who is the German distributor for R2 robotic massage?",
+            "Who should use a commercial robotic massage system?",
+            "What functions does R2 include?",
+            "Is robotic massage a medical treatment?",
+            "What safety protections should a robotic massage buyer check?",
+            "What room setup is needed for a massage robot?",
+            "How can a wellness center estimate robotic massage ROI?",
+            "How does robotic massage compare with a massage chair?",
+            "How does robotic massage compare with human massage?",
+            "What should distributors ask before representing a massage robot brand?"
+          ]
+        }
+      </script>
+
+      <section class="section faq-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">FAQ</p>
+          <h2>Answer buyer questions directly.</h2>
+        </div>
+        <div class="faq-list reveal">
+          <details open>
+            <summary>What are the main R2 functions?</summary>
+            <p>R2 is presented as a one-unit, six-function system: acupoint massage, shockwave, radio frequency, cupping therapy, moxibustion, and facial care.</p>
+          </details>
+          <details>
+            <summary>What service functions does R2 include?</summary>
+            <p>R2 includes acupoint massage, shockwave, radio frequency, cupping therapy, moxibustion, and facial care for multiple wellness activation workflows.</p>
+          </details>
+          <details>
+            <summary>Which commercial scenarios fit the product?</summary>
+            <p>Primary scenarios include wellness centers, recovery studios, hotels and resorts, eldercare facilities, home wellness, and distributors.</p>
+          </details>
+          <details>
+            <summary>How should the site handle medical claims?</summary>
+            <p>Cedeno R2 should be described for wellness, relaxation, body-care, and recovery-support use cases. Treatment claims require regulatory and clinical evidence before publication.</p>
+          </details>
+          <details>
+            <summary>What should a buyer request before purchase?</summary>
+            <p>Buyers should request model specs, installation requirements, certification documents, safety notes, training process, warranty, maintenance plan, and quote terms.</p>
+          </details>
+        </div>
+      </section>
+
+      <section id="quote" class="section quote-section">
+        <div class="quote-copy reveal">
+          <p class="eyebrow">Conversion</p>
+          <h2>Collect better leads from day one.</h2>
+          <p>
+            Tell us your market, service room, target users, timeline, and quantity.
+            We will route your request by home use, B2B deployment, distributor
+            opportunity, or partnership fit.
+          </p>
+        </div>
+        <form class="lead-form reveal" id="lead-form">
+          <label>
+            Name
+            <input type="text" name="name" placeholder="Your name" required />
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" placeholder="name@company.com" required />
+          </label>
+          <label>
+            Customer type
+            <select name="type" required>
+              <option value="">Select one</option>
+              <option>Wellness center</option>
+              <option>Recovery studio</option>
+              <option>Hotel or resort</option>
+              <option>Eldercare facility</option>
+              <option>Distributor</option>
+              <option>Home user</option>
+            </select>
+          </label>
+          <label>
+            Interested product
+            <select name="product" required>
+              <option>R2</option>
+              <option>Not sure yet</option>
+            </select>
+          </label>
+          <label class="span-2">
+            Message
+            <textarea name="message" rows="4" placeholder="Tell us your market, quantity, timeline, and use case."></textarea>
+          </label>
+          <button class="button primary span-2" type="submit">Preview lead capture</button>
+          <p class="form-note span-2" id="form-note" role="status"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <strong>Cedeno Technologies</strong>
+        <p>Smart Robotics. Intelligent Results.</p>
+      </div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <h2>navigation</h2>
+        <div class="footer-nav-list">
+          <a href="#products">Products</a>
+          <a href="#technology">Technology</a>
+          <a href="#solutions">Solutions</a>
+          <a href="#compare">Compare</a>
+          <a href="#resources">Resources</a>
+          <a href="#quote">Contact</a>
+        </div>
+      </nav>
+      <div class="footer-social">
+        <h2>Social Media</h2>
+        <div class="social-buttons" aria-label="Cedeno Technologies social media">
+          <a class="social-button" href="https://www.instagram.com/cedeno_technologies/" target="_blank" rel="noopener" aria-label="Cedeno Technologies on Instagram">
+            <span aria-hidden="true">◎</span>
+          </a>
+          <a class="social-button" href="https://www.linkedin.com/company/cedeno-technologies/" target="_blank" rel="noopener" aria-label="Cedeno Technologies on LinkedIn">
+            <span aria-hidden="true">in</span>
+          </a>
+          <a class="social-button" href="https://www.youtube.com/@CedenoTech" target="_blank" rel="noopener" aria-label="Cedeno Technologies on YouTube">
+            <span aria-hidden="true">▶</span>
+          </a>
+        </div>
+        <div class="legal-links">
+          <a href="#terms">Terms and Conditions</a>
+          <a href="#imprint">Imprint</a>
+          <a href="#data-protection">Data protection</a>
+        </div>
+      </div>
     </footer>
 
-    <script>
-        document.querySelectorAll('a.nav-item').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement) {
-                    const headerOffset = 80;
-                    const elementPosition = targetElement.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-      
-                    window.scrollTo({
-                         top: offsetPosition,
-                         behavior: "smooth"
-                    });
-                }
-            });
-        });
-    </script>
-</body>
+    <section class="cookie-consent" id="data-protection" aria-label="Data protection and consent notice">
+      <div>
+        <h2>Data protection &amp; consent</h2>
+        <p>
+          We use cookies and similar technologies to provide and, with your consent,
+          improve our website. Necessary cookies are required for its operation. You
+          can withdraw your consent at any time. Further information can be found in
+          our <a href="#data-protection">privacy policy</a>.
+        </p>
+        <div class="consent-settings" hidden>
+          <label><input type="checkbox" checked disabled /> <span>Necessary cookies</span></label>
+          <label><input type="checkbox" /> <span>Analytics cookies</span></label>
+          <div class="privacy-details">
+            <article><h3>Controller</h3><p>Cedeno Technologies is responsible for this website and for handling enquiries sent through the site.</p></article>
+            <article><h3>Cookies</h3><p>Necessary cookies keep the website usable. Optional analytics cookies are only used after consent.</p></article>
+            <article><h3>Contact form</h3><p>Information submitted through the form is used to answer your enquiry, prepare demos, and discuss R2 deployment.</p></article>
+            <article><h3>External links</h3><p>Social media links lead to external platforms such as LinkedIn, Instagram, and YouTube, which process data under their own policies.</p></article>
+            <article><h3>Your rights</h3><p>You may request access, correction, deletion, restriction, objection, portability, or withdrawal of consent where applicable.</p></article>
+          </div>
+        </div>
+      </div>
+      <div class="consent-actions">
+        <button type="button" class="button secondary" data-consent-action="settings">Settings</button>
+        <button type="button" class="button secondary" data-consent-action="necessary">Only necessary</button>
+        <button type="button" class="button primary" data-consent-action="accept">All accept</button>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
 </html>
