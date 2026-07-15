@@ -87,9 +87,9 @@ This file is the readable index of the SEO and GEO terms used by the local websi
 
 ## Comparison Keywords
 
-- Cedeno R2 vs roboSculptor alternative
-- Cedeno R2 vs RoboRelax alternative
-- Cedeno R2 vs Gharieni Cobotics alternative
+- Cedeno R2 vs r*S*tor alternative
+- Cedeno R2 vs R*b*R*l*x alternative
+- Cedeno R2 vs Ghaien Cobot*cs alternative
 - robotic massage arm vs massage chair
 - robotic massage vs human massage
 - massage robot vs massage chair

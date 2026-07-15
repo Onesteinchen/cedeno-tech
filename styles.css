@@ -1026,10 +1026,31 @@ details p {
   font-weight: 700;
 }
 
+.form-note[data-state="error"] {
+  color: #ff9b8f;
+}
+
+.form-honeypot {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.lead-form button:disabled {
+  cursor: wait;
+  opacity: 0.72;
+}
+
 .site-footer {
   display: grid;
-  grid-template-columns: 260px minmax(520px, 1fr) 340px;
-  gap: clamp(24px, 3.5vw, 64px);
+  grid-template-columns: minmax(220px, 280px) max-content minmax(220px, 280px);
+  justify-content: center;
+  align-items: start;
+  gap: clamp(28px, 3vw, 56px);
   padding: 52px 5vw;
   color: rgba(255, 255, 255, 0.78);
   background: #030a0f;
@@ -1051,6 +1072,17 @@ details p {
   line-height: 1.6;
 }
 
+.footer-contact {
+  display: inline-flex;
+  margin-top: 12px;
+  color: var(--aqua);
+  font-weight: 800;
+}
+
+.footer-contact:hover {
+  color: var(--ink);
+}
+
 .footer-links {
   display: flex;
   flex-direction: column;
@@ -1061,7 +1093,7 @@ details p {
 .footer-nav-list {
   display: flex;
   flex-wrap: nowrap;
-  gap: 12px;
+  gap: 16px;
   max-width: none;
 }
 

@@ -15,7 +15,7 @@ The requested in-app browser was already on the local `file://` version of the w
 5. Business value: efficiency, space saving, collaboration, and smart store operation answer operator concerns.
 6. Solutions: wellness centers, recovery studios, hotels/resorts, senior living, home wellness users, and distributors are described as real audiences.
 7. Scenarios: eight deployment environments are rendered as crawlable HTML text instead of only as one image.
-8. Compare: competitor and category comparisons explain Cedeno R2 against roboSculptor, RoboRelax, Gharieni/Cobotics, massage chairs, and human massage.
+8. Compare: competitor and category comparisons explain Cedeno R2 against masked competitor references, massage chairs, and human massage.
 9. Resources and FAQ: buyer questions cover definition, R2 functions, safety, distributor needs, ROI, and buying documents.
 10. Quote form: lead classification captures customer type, model interest, and scenario message.
 
@@ -67,7 +67,7 @@ The site now exposes product meaning through:
 - Scenarios: wellness center, spa, beauty salon, hotel spa, resort, senior living community, community service center, recovery studio, fitness center, sports wellness center, home wellness.
 - Body needs: shoulder relaxation, back relaxation, waist relaxation, leg recovery, office worker fatigue, post-workout recovery, senior wellness.
 - Buyer actions: price, cost, ROI, installation requirements, safety documentation, contraindications, distributor program, book demo, download brochure, request quote.
-- Comparisons: roboSculptor alternative, RoboRelax alternative, Gharieni Cobotics alternative, robotic massage vs massage chair, robotic massage vs human massage.
+- Comparisons: masked competitor alternatives, robotic massage vs massage chair, robotic massage vs human massage.
 
 ## llms.txt optimization
 

@@ -69,9 +69,9 @@ Use wellness wording such as relaxation, body care, recovery support, service co
 
 ## Comparison Intents
 
-- Cedeno R2 vs roboSculptor: compare R2 specifications, six-function service logic, safety layers, room deployment, commercial scenarios, ROI assumptions, local German service, and distributor readiness.
-- Cedeno R2 vs RoboRelax: compare ownable or deployable robotic massage equipment with a local robot massage salon and booking model.
-- Cedeno R2 vs Gharieni Cobotics: compare robotic massage product clarity, catalog authority, product specifications, room deployment, proof assets, distribution fit, and quote path.
+- Cedeno R2 vs r*S*tor: compare R2 specifications, six-function service logic, safety layers, room deployment, commercial scenarios, ROI assumptions, local German service, and distributor readiness.
+- Cedeno R2 vs R*b*R*l*x: compare ownable or deployable robotic massage equipment with a local robot massage salon and booking model.
+- Cedeno R2 vs Ghaien Cobot*cs: compare robotic massage product clarity, catalog authority, product specifications, room deployment, proof assets, distribution fit, and quote path.
 - Robotic massage arm vs massage chair: compare commercial service workflow, room deployment, staff oversight, and fixed consumer chair limitations.
 - Robotic massage vs human massage: compare repeatability, therapist fatigue, scheduling, service consistency, and the continuing need for professional judgment.
 

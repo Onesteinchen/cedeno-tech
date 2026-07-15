@@ -175,14 +175,14 @@ const dictionary = {
       "Buyers comparing massage robots usually care about ownership model, use scenario, service capacity, safety, and whether the product can be deployed beyond a single demo room.",
     compareHeaders: ["Buyer question", "What to know", "Cedeno answer"],
     compareCells: [
-      "Cedeno R2 vs roboSculptor",
-      "roboSculptor presents AI-powered robotic body therapy for wellness businesses, with ROI and media proof.",
+      "Cedeno R2 vs r*S*tor",
+      "r*S*tor presents AI-powered robotic body therapy for wellness businesses, with ROI and media proof.",
       "Cedeno gives German buyers visible R2 specifications, six-function service logic, safety layers, commercial scenarios, training, and local after-sales support.",
-      "Cedeno R2 vs RoboRelax",
-      "RoboRelax is a local robot massage salon model with booking, pricing, and a Munich-focused store experience.",
+      "Cedeno R2 vs R*b*R*l*x",
+      "R*b*R*l*x is a local robot massage salon model with booking, pricing, and a Munich-focused store experience.",
       "Cedeno is positioned for operators who want to own, deploy, or distribute R2 robotic massage systems across multiple commercial scenarios in Germany.",
-      "Cedeno R2 vs Gharieni/Cobotics",
-      "Gharieni builds authority through a mature spa equipment ecosystem, catalogs, news, and client portfolio.",
+      "Cedeno R2 vs Ghaien / Cobot*cs",
+      "Ghaien / Cobot*cs builds authority through a mature spa equipment ecosystem, catalogs, news, and client portfolio.",
       "Cedeno can be clearer for robotic massage buyers by connecting R2 specs, end effectors, room layouts, safety boundaries, local service, and quote actions on the same path.",
       "Robotic massage arm vs massage chair",
       "A massage chair is a fixed consumer device. It usually has limited room workflow value and cannot easily support staff-led commercial protocols.",
@@ -233,18 +233,18 @@ const dictionary = {
     faqEyebrow: "FAQ",
     faqTitle: "Answer buyer questions directly.",
     faqSummaries: [
-      "What are the main R2 functions?",
-      "What service functions does R2 include?",
-      "Which commercial scenarios fit the product?",
-      "How should the site handle medical claims?",
-      "What should a buyer request before purchase?"
+      "What business value does the AI massage robot bring to my location?",
+      "How is Cedeno R2 different from professional human therapists?",
+      "How is physical safety guaranteed during an autonomous AI robotic massage session?",
+      "What are the ideal commercial scenarios and business models for this equipment?",
+      "What local installation, training and after-sales support does Cedeno provide for R2 partners in Germany and DACH?"
     ],
     faqTexts: [
-      "R2 is presented as a one-unit, six-function system: acupoint massage, shockwave, radio frequency, cupping therapy, moxibustion, and facial care.",
-      "R2 includes acupoint massage, shockwave, radio frequency, cupping therapy, moxibustion, and facial care for multiple wellness activation workflows.",
-      "Primary scenarios include wellness centers, recovery studios, hotels and resorts, eldercare facilities, home wellness, and distributors.",
-      "Cedeno R2 should be described for wellness, relaxation, body-care, and recovery-support use cases. Treatment claims require regulatory and clinical evidence before publication.",
-      "Buyers should request model specs, installation requirements, certification documents, safety notes, training process, warranty, maintenance plan, and quote terms."
+      "It democratizes premium wellness, turning expert massage into affordable daily luxury for all. Eliminating steep prices, long booking waits and inconsistent human massage quality, it delivers accurate, on-demand robotic therapy. For your venue, this tech unlocks high-margin, repeatable wellness services accessible round-the-clock, turning your space into a hassle-free wellbeing hub.",
+      "Our R2 commercial robotic arm replicates master massage techniques via an endlessly expanding AI knowledge graph and AI vision that scans the body in seconds to customize precise treatment. It delivers consistent, steady-pressure massage without skill gaps, supporting rather than replacing therapists. Built for German spas, hotels and salons, this professional-grade machine features six integrated wellness functions, far outperforming ordinary consumer massage chairs.",
+      "Unlike easily fatigued human therapists unable to quantify massage force in newtons, Cedeno's AI massage robot delivers mathematically precise therapy by capturing physical feedback 1,000 times per second to eliminate mechanical deviations, offering unmatched safety and consistent treatment; an easily accessible physical emergency stop button instantly cuts power for urgent safety control.",
+      "Engineered for high-end, high-footfall venues, including luxury spas, sports clubs, fitness centers, hotels, airport lounges and corporate offices. It fits flexible business models: standalone premium self-service amenity, add-on upgrade to existing offerings, or dedicated automated wellness zone. Operating autonomously with minimal single-staff oversight, it drives steady recurring revenue with negligible extra labor costs.",
+      "Cedeno offers on-site space planning, installation finished within one hour, comprehensive staff training requiring no prior massage expertise, and local on-site after-sales support that keeps your daily operations uninterrupted. For channel partners, we provide exclusive territorial terms and dedicated sales support to fuel regional business growth."
     ],
     quoteEyebrow: "Conversion",
     quoteTitle: "Collect better leads from day one.",
@@ -252,8 +252,10 @@ const dictionary = {
       "Tell us your market, service room, target users, timeline, and quantity. We will route your request by home use, B2B deployment, distributor opportunity, or partnership fit.",
     formLabels: ["Name", "Email", "Customer type", "Interested product", "Message"],
     placeholders: ["Your name", "name@company.com", "Tell us your market, quantity, timeline, and use case."],
-    formButton: "Preview lead capture",
-    leadSaved: (name, type, product) => `${name} saved locally as a ${type} lead interested in ${product}. No data was sent.`,
+    formButton: "Send inquiry",
+    formSubmitting: "Sending...",
+    leadSaved: (name) => `Thanks, ${name}. Your inquiry has been sent to Cedeno.`,
+    leadError: "We could not send your inquiry. Please try again or email info@cedeno-tech.de.",
     validation: {
       nameRequired: "Please enter your name.",
       emailRequired: "Please enter your email address.",
@@ -366,14 +368,14 @@ const dictionary = {
       "Käufer vergleichen meistens Besitzmodell, Einsatzszenario, Servicekapazität, Sicherheit und ob das Produkt über einen einzelnen Demoraum hinaus skaliert werden kann.",
     compareHeaders: ["Käuferfrage", "Wichtig zu wissen", "Cedeno Antwort"],
     compareCells: [
-      "Cedeno R2 vs roboSculptor",
-      "roboSculptor zeigt KI-gestützte robotische Körpertherapie für Wellnessbetriebe, mit ROI-Argumenten und Mediennachweisen.",
+      "Cedeno R2 vs r*S*tor",
+      "r*S*tor zeigt KI-gestützte robotische Körpertherapie für Wellnessbetriebe, mit ROI-Argumenten und Mediennachweisen.",
       "Cedeno bietet deutschen Käufern klare R2 Spezifikationen, sechs Funktionen, Sicherheitsebenen, Einsatzszenarien, Training und lokalen After-Sales-Support.",
-      "Cedeno R2 vs RoboRelax",
-      "RoboRelax ist ein lokales Robotermassage-Studio mit Buchung, Preisen und einem münchenbezogenen Store-Erlebnis.",
+      "Cedeno R2 vs R*b*R*l*x",
+      "R*b*R*l*x ist ein lokales Robotermassage-Studio mit Buchung, Preisen und einem münchenbezogenen Store-Erlebnis.",
       "Cedeno ist für Betreiber positioniert, die R2 Robotermassage-Systeme besitzen, einsetzen oder über mehrere kommerzielle Szenarien in Deutschland vertreiben möchten.",
-      "Cedeno R2 vs Gharieni/Cobotics",
-      "Gharieni baut Autorität über ein reifes Spa-Equipment-Ökosystem, Kataloge, News und Kundenportfolio auf.",
+      "Cedeno R2 vs Ghaien / Cobot*cs",
+      "Ghaien / Cobot*cs baut Autorität über ein reifes Spa-Equipment-Ökosystem, Kataloge, News und Kundenportfolio auf.",
       "Cedeno macht die Bewertung klarer, indem R2 Spezifikationen, Endeffektoren, Raumlayouts, Sicherheitsgrenzen, lokaler Service und Anfragepfad verbunden werden.",
       "Roboter-Massagearm vs Massagesessel",
       "Ein Massagesessel ist meist ein festes Consumer-Gerät. Er unterstützt kommerzielle Raumabläufe und personalgeführte Protokolle nur begrenzt.",
@@ -424,18 +426,18 @@ const dictionary = {
     faqEyebrow: "FAQ",
     faqTitle: "Käuferfragen direkt beantworten.",
     faqSummaries: [
-      "Was sind die wichtigsten R2 Funktionen?",
-      "Welche Servicefunktionen enthält R2?",
-      "Welche kommerziellen Szenarien passen?",
-      "Wie sollten medizinische Aussagen behandelt werden?",
-      "Was sollte ein Käufer vor dem Kauf anfragen?"
+      "Welchen geschäftlichen Mehrwert bringt der KI-Massageroboter für meinen Standort?",
+      "Wie unterscheidet sich Cedeno R2 von professionellen menschlichen Therapeuten?",
+      "Wie wird die körperliche Sicherheit während einer autonomen KI-Robotermassage gewährleistet?",
+      "Welche kommerziellen Szenarien und Geschäftsmodelle eignen sich ideal für dieses Gerät?",
+      "Welche lokale Installation, Schulung und After-Sales-Unterstützung bietet Cedeno für R2 Partner in Deutschland und der DACH-Region?"
     ],
     faqTexts: [
-      "R2 wird als System mit einem Gerät und sechs Funktionen präsentiert: Akupunktmassage, Shockwave, Radiofrequenz, Schröpfen, Moxibustion und Gesichtspflege.",
-      "R2 enthält Akupunktmassage, Shockwave, Radiofrequenz, Schröpfen, Moxibustion und Gesichtspflege für verschiedene Wellness-Aktivierungsabläufe.",
-      "Primäre Szenarien sind Wellness-Center, Recovery-Studios, Hotels und Resorts, Seniorenbetreuung, private Wellness und Distributoren.",
-      "Cedeno R2 sollte für Wellness, Entspannung, Body-Care und Recovery-Support beschrieben werden. Medizinische Aussagen benötigen regulatorische und klinische Nachweise.",
-      "Käufer sollten Modellspezifikationen, Installationsanforderungen, Zertifizierungen, Sicherheitshinweise, Schulungsprozess, Garantie, Wartungsplan und Angebotsbedingungen anfragen."
+      "Er demokratisiert Premium-Wellness und macht hochwertige Massage als erschwinglichen täglichen Luxus zugänglich. Statt hoher Preise, langer Wartezeiten und schwankender menschlicher Massagequalität bietet er präzise, bedarfsgerechte robotische Wellness-Anwendungen. Für Ihren Standort eröffnet diese Technologie margenstarke, wiederholbare Wellness-Services rund um die Uhr und verwandelt Ihre Fläche in einen unkomplizierten Wellbeing-Hub.",
+      "Der kommerzielle R2 Roboterarm repliziert Master-Massagetechniken über einen kontinuierlich wachsenden KI-Wissensgraphen und KI-Vision, die den Körper in Sekunden scannt, um präzise Anwendungen anzupassen. Er liefert konstante Massage mit gleichbleibendem Druck ohne Qualitätslücken und unterstützt Therapeuten, anstatt sie zu ersetzen. Für deutsche Spas, Hotels und Salons entwickelt, bietet diese professionelle Maschine sechs integrierte Wellness-Funktionen und geht deutlich über gewöhnliche Consumer-Massagesessel hinaus.",
+      "Während ermüdete menschliche Therapeuten Massagekraft nicht in Newton quantifizieren können, erfasst Cedenos KI-Massageroboter physisches Feedback 1.000 Mal pro Sekunde. Dadurch werden mechanische Abweichungen reduziert und eine sichere, konsistente Anwendung unterstützt. Ein leicht erreichbarer physischer Not-Aus-Schalter trennt bei Bedarf sofort die Stromversorgung.",
+      "Entwickelt für hochwertige, stark frequentierte Standorte wie Luxus-Spas, Sportclubs, Fitnesscenter, Hotels, Flughafenlounges und Unternehmensbüros. R2 passt zu flexiblen Geschäftsmodellen: eigenständige Premium-Self-Service-Amenity, Upgrade zu bestehenden Angeboten oder eigene automatisierte Wellness-Zone. Mit autonomem Betrieb und minimaler Einzelaufsicht unterstützt es wiederkehrende Umsätze bei geringem zusätzlichem Personalaufwand.",
+      "Cedeno bietet Vor-Ort-Flächenplanung, Installation innerhalb von etwa einer Stunde, umfassende Mitarbeiterschulung ohne vorausgesetzte Massageerfahrung und lokalen After-Sales-Support, damit der tägliche Betrieb stabil bleibt. Für Vertriebspartner bieten wir exklusive Gebietsbedingungen und dedizierte Vertriebsunterstützung für regionales Wachstum."
     ],
     quoteEyebrow: "Kontakt",
     quoteTitle: "Von Anfang an bessere Anfragen erfassen.",
@@ -443,8 +445,10 @@ const dictionary = {
       "Nennen Sie Markt, Serviceraum, Zielgruppe, Zeitplan und Menge. Wir ordnen Ihre Anfrage nach privater Nutzung, B2B-Implementierung, Vertrieb oder Partnerschaft ein.",
     formLabels: ["Name", "E-Mail", "Kundentyp", "Interessiertes Produkt", "Nachricht"],
     placeholders: ["Ihr Name", "name@firma.de", "Nennen Sie Markt, Menge, Zeitplan und Einsatzfall."],
-    formButton: "Lead lokal prüfen",
-    leadSaved: (name, type, product) => `${name} wurde lokal als ${type}-Anfrage für ${product} gespeichert. Es wurden keine Daten gesendet.`,
+    formButton: "Anfrage senden",
+    formSubmitting: "Wird gesendet...",
+    leadSaved: (name) => `Vielen Dank, ${name}. Ihre Anfrage wurde an Cedeno gesendet.`,
+    leadError: "Ihre Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder schreiben Sie an info@cedeno-tech.de.",
     validation: {
       nameRequired: "Bitte geben Sie Ihren Namen ein.",
       emailRequired: "Bitte geben Sie Ihre E-Mail-Adresse ein.",
@@ -655,7 +659,7 @@ document.querySelectorAll("#lead-form input, #lead-form select, #lead-form texta
   field.addEventListener("change", () => field.setCustomValidity(""));
 });
 
-leadForm?.addEventListener("submit", (event) => {
+leadForm?.addEventListener("submit", async (event) => {
   event.preventDefault();
   const fields = Array.from(leadForm.querySelectorAll("input, select, textarea"));
   const firstInvalid = fields.find((field) => {
@@ -666,12 +670,41 @@ leadForm?.addEventListener("submit", (event) => {
     firstInvalid.reportValidity();
     return;
   }
-  const data = new FormData(leadForm);
-  const name = data.get("name") || "Lead";
-  const type = data.get("type") || "buyer";
-  const product = data.get("product") || "product";
-  if (formNote) {
-    formNote.textContent = dictionary[currentLang].leadSaved(name, type, product);
+  const copy = dictionary[currentLang];
+  const button = leadForm.querySelector('button[type="submit"]');
+  const data = Object.fromEntries(new FormData(leadForm).entries());
+  const payload = window.CedenoLeadCapture.buildLeadPayload(data, {
+    language: currentLang,
+    source: window.location.href
+  });
+
+  if (button) {
+    button.disabled = true;
+    button.textContent = copy.formSubmitting;
   }
-  leadForm.classList.add("submitted");
+  if (formNote) {
+    formNote.dataset.state = "pending";
+    formNote.textContent = copy.formSubmitting;
+  }
+
+  try {
+    await window.CedenoLeadCapture.submitLead(payload);
+    if (formNote) {
+      formNote.dataset.state = "success";
+      formNote.textContent = copy.leadSaved(payload.name);
+    }
+    leadForm.reset();
+    leadForm.classList.add("submitted");
+  } catch (error) {
+    console.error("Lead submission failed", error);
+    if (formNote) {
+      formNote.dataset.state = "error";
+      formNote.textContent = copy.leadError;
+    }
+  } finally {
+    if (button) {
+      button.disabled = false;
+      button.textContent = copy.formButton;
+    }
+  }
 });
