@@ -1,114 +1,44 @@
 # Cedeno R2 SEO/GEO Keywords
 
-This file is the readable index of the SEO and GEO terms used by the local website.
+This review file records the Cedeno-only terms represented in crawlable homepage content, structured data, and `llms.txt`.
 
-## Where These Terms Live
-
-- `eachifuture-site/index.html`: meta keywords, JSON-LD structured data, FAQPage, DefinedTermSet, and `search-intent-map`.
-- `eachifuture-site/llms.txt`: AI-readable product facts, keyword clusters, buyer questions, and answer snippets.
-- `eachifuture-site/audit/seo-geo-keywords-r2.md`: this human-readable review file.
-
-## Brand And Model Keywords
+## Brand And Category
 
 - Cedeno
 - Cedeno Technologies
 - Cedeno R2
 - Cedeno R2 Germany
 - R2 robotic massage Germany
-- EFBR2
-- German R2 distributor
-- R2 robotic massage after-sales Germany
-- Eachifuture R2 product alias
-
-## Germany And Service Keywords
-
-- robotic massage Germany
-- massage robot Germany
-- robotic massage distributor Germany
-- robotic massage after-sales Germany
-- robotic massage demo Germany
-- local robotic massage service Germany
-- R2 training Germany
-- R2 deployment support Germany
-
-## Category Keywords
-
 - robotic massage arm
-- robot-assisted massage
-- massage robot
-- AI massage robot
-- commercial massage robot
-- robotic massage system
-- wellness robot
+- commercial robotic massage
 - wellness robotics
-- robotic body care
-- automated massage machine
-- intelligent massage equipment
+- robot-assisted massage
 
-## Function Keywords
+## Approved Product Facts
 
-- acupoint massage robot
-- shockwave massage robot
-- radio frequency massage robot
-- RF wellness robot
-- robotic cupping therapy
-- moxibustion robot
-- facial care robot
-- six-function massage robot
+- 3 flexible massage attachments
+- 400% increase in the patient-to-operator/masseur ratio
+- double safety through redundant force monitoring
+- 24/7 operation possible
 
-## Scenario Keywords
+## Commercial And Service Intent
 
-- massage robot for wellness center
-- massage robot for spa
-- massage robot for beauty salon
-- massage robot for relaxation massage
-- Entspannungsmassage Roboter
-- massage robot for hotel spa
-- massage robot for resort
-- massage robot for senior living community
-- massage robot for community service center
-- massage robot for recovery studio
-- massage robot for fitness center
-- sports recovery massage robot
-- home robotic massage
-
-## Buyer-Action Keywords
-
-- robotic massage robot price
-- commercial massage robot cost
-- robotic massage ROI
-- robotic massage installation requirements
-- robotic massage safety documentation
-- robotic massage contraindications
-- massage robot distributor program
-- book robotic massage robot demo
-- request Cedeno R2 quote
-- request R2 product sheet
-
-## Comparison Keywords
-
-- Cedeno R2 vs r*S*tor alternative
-- Cedeno R2 vs R*b*R*l*x alternative
-- Cedeno R2 vs Ghaien Cobot*cs alternative
-- robotic massage arm vs massage chair
-- robotic massage vs human massage
-- massage robot vs massage chair
-- AI massage robot comparison
+- robotic massage for wellness centers
+- robotic massage for recovery studios
+- robotic massage for hotels and resorts
+- robotic massage for relaxation massage rooms
+- robotic massage planning Germany
+- robotic massage training Germany
+- robotic massage maintenance coordination
+- robotic massage after-sales support DACH
 
 ## GEO Questions
 
 - What is Cedeno R2?
-- Who is the German distributor for R2 robotic massage?
-- What functions does R2 include?
-- Who should use a commercial robotic massage system?
-- What safety protections should a robotic massage buyer check?
-- What room setup is needed for a massage robot?
-- What after-sales support does Cedeno provide in Germany?
-- How can a wellness center estimate robotic massage ROI?
-- How does robotic massage compare with a massage chair?
-- How does robotic massage compare with human massage?
-- What should distributors ask before representing a massage robot brand?
+- Which commercial scenarios does Cedeno R2 support?
+- What safety support does Cedeno R2 provide?
+- What local support does Cedeno provide in Germany and DACH?
 
 ## Product Boundary
 
-R2 is the only product presented for sale on this website. R2s should not be displayed as a purchasable product, quote option, product model, comparison target, or buyer choice.
+Cedeno R2 is the only product presented for sale on the website. Search and AI-readable content must keep this R2-only boundary clear.

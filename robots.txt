@@ -5,4 +5,4 @@ Disallow: /admin
 Disallow: /api
 Disallow: /account
 
-Sitemap: https://www.cedeno-technologies.com/sitemap.xml
+Sitemap: https://cedeno-tech.de/sitemap.xml
